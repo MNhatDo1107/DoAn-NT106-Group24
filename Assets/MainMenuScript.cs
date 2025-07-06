@@ -7,6 +7,6 @@ public class MainMenuScript : MonoBehaviour
 {
     public void OnClickPlay()
     {
-        LoadingScreenManager.instance.SwitchToScene(1);
+        LoadingScreenManager.instance.SwitchToScene(0);
     }
 }

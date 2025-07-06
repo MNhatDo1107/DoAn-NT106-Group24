@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         boss.SetActive(false);
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
     }
 
     void Update()
