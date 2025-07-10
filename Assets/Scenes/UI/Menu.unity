@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 14794175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 08367b7615ebbb84db340de6c2164020, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &14794175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3087,10 +3099,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 08367b7615ebbb84db340de6c2164020, type: 3}
+      - m_Target: {fileID: 11500000, guid: 385d9946fc295b84d95dc632ae6e9832, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4525,7 +4537,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 0159a0a3a7a746b46b184fa70e4d8feb, type: 3}
   m_Resource: {fileID: 8300000, guid: 0159a0a3a7a746b46b184fa70e4d8feb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.705
+  m_Volume: 0.184
   m_Pitch: 1
   Loop: 1
   Mute: 0

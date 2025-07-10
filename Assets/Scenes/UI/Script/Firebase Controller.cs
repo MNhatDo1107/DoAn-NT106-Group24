@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using System;
 using Firebase.Extensions;
+using Photon.Pun;
 
 public class FirebaseController : MonoBehaviour
 {
@@ -186,6 +187,7 @@ public class FirebaseController : MonoBehaviour
             }
 
             Firebase.Auth.AuthResult result = task.Result;
+            PhotonNetwork.NickName = result.User.DisplayName;
             Debug.LogFormat("Bạn đã đăng nhập thành công: {0} ({1})",
                 result.User.DisplayName, result.User.UserId);
 
