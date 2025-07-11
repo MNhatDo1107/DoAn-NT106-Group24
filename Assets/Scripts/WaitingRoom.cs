@@ -77,7 +77,11 @@ public class WaitingRoomManager : MonoBehaviourPunCallbacks
 
         if (gameplayRoot != null)
             gameplayRoot.SetActive(true);
+
+        // Gọi spawn player sau khi bắt đầu game
+        Object.FindFirstObjectByType<PhotonLauncher>().SpawnPlayer();
     }
+
     IEnumerator RefreshPlayerList()
     {
         yield return new WaitForSeconds(0.5f);

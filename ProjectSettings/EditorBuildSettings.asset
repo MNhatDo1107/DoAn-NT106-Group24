@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/UI/Menu.unity
     guid: c6a28868a2faa5c4dae7d260723426df
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/UI/Join&Host Room.unity
     guid: 786387eece6e20149a7f004423c0aeb4
   - enabled: 1
