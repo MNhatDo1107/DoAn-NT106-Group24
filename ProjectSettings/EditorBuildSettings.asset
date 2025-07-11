@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/UI/Form UI.unity
     guid: 46cc0ae48b08a774c8bc684631ef3a2d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/UI/Menu.unity
     guid: c6a28868a2faa5c4dae7d260723426df
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/UI/Join&Host Room.unity
     guid: 786387eece6e20149a7f004423c0aeb4
   - enabled: 1
