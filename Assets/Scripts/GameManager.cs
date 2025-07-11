@@ -1,7 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun
 {
     public int currentEnergy;
 
@@ -19,10 +19,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-    }
-
     public void AddEnergy()
     {
         if (bossCalled)
@@ -34,11 +30,12 @@ public class GameManager : MonoBehaviour
 
         if (currentEnergy == energyThreshold)
         {
-            CallBoss();
+            photonView.RPC("CallBossRPC", RpcTarget.All);
         }
     }
 
-    private void CallBoss()
+    [PunRPC]
+    private void CallBossRPC()
     {
         bossCalled = true;
         boss.SetActive(true);

@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Collections;
+using Photon.Pun;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPunCallbacks
 {
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -26,19 +29,22 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        MovePlayer();
+        if (photonView.IsMine)
+        {
+            MovePlayer();
+        }
     }
 
     void MovePlayer()
     {
         Vector2 playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.linearVelocity = playerInput.normalized * moveSpeed;
-        if(playerInput.x < 0)
+        if (playerInput.x < 0)
         {
             spriteRenderer.flipX = true;
         }
 
-        else if(playerInput.x > 0)
+        else if (playerInput.x > 0)
         {
             spriteRenderer.flipX = false;
         }
@@ -55,10 +61,17 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        photonView.RPC("RPC_TakeDamage", RpcTarget.AllBuffered, damage);
+    }
+
+    [PunRPC]
+    private void RPC_TakeDamage(float damage)
+    {
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
-        if (currentHp <= 0)
+
+        if (currentHp <= 0 && photonView.IsMine)
         {
             Die();
         }

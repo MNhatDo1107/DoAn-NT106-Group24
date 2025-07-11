@@ -1,25 +1,29 @@
-using UnityEngine;
+﻿using UnityEngine;
+using Photon.Pun;
 
-public class PlayerCollision : MonoBehaviour
+public class PlayerCollision : MonoBehaviourPun
 {
     [SerializeField] private GameManager gameManager;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("EnemyBullet"))
+        // Chỉ xử lý nếu đây là nhân vật của người chơi đang điều khiển (local player)
+        if (!photonView.IsMine) return;
+
+        if (collision.collider.CompareTag("EnemyBullet"))
         {
             Player player = GetComponent<Player>();
             player.TakeDamage(10f);
         }
-        else if (collision.CompareTag("Usb"))
+        else if (collision.collider.CompareTag("Usb"))
         {
             Debug.Log("Collected USB");
-            Destroy(collision.gameObject);
+            Destroy(collision.collider.gameObject);
         }
-        else if (collision.CompareTag("Energy"))
+        else if (collision.collider.CompareTag("Energy"))
         {
             gameManager.AddEnergy();
-            Destroy(collision.gameObject);
+            Destroy(collision.collider.gameObject);
         }
     }
 }

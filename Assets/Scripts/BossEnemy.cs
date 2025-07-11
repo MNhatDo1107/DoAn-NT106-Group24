@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class BossEnemy : Enemy
@@ -15,15 +16,18 @@ public class BossEnemy : Enemy
     protected override void Update()
     {
         base.Update();
-        if(Time.time >= nextSkillTime) 
+        if (PhotonNetwork.IsMasterClient && Time.time >= nextSkillTime)
         {
             SuDungSkill();
-        } 
+        }
     }
 
     protected override void Die()
     {
-        Instantiate(usbPrefasb, transform.position, Quaternion.identity);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Instantiate(usbPrefasb.name, transform.position, Quaternion.identity);
+        }
         base.Die();
     }
 
@@ -45,26 +49,27 @@ public class BossEnemy : Enemy
 
     private void BanDanThuong()
     {
-        if (player != null)
+        if (player != null && PhotonNetwork.IsMasterClient)
         {
             Vector3 directionToPlayer = player.transform.position - firePoint.position;
             directionToPlayer.Normalize();
-            GameObject bullet = Instantiate(bulletPrefabs, firePoint.position, Quaternion.identity);
-            EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
+            GameObject bullet = PhotonNetwork.Instantiate(bulletPrefabs.name, firePoint.position, Quaternion.identity);
+            EnemyBullet enemyBullet = bullet.GetComponent<EnemyBullet>();
             enemyBullet.SetMovementDirection(directionToPlayer * speedDanThuong);
         }
     }
 
     private void BanDanVongTron()
     {
+        if (!PhotonNetwork.IsMasterClient) return;
         const int bulletCount = 12;
         float angleStep = 360f / bulletCount;
         for (int i = 0; i < bulletCount; i++)
         {
             float angle = i * angleStep;
             Vector3 bulletDirection = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
-            GameObject bullet = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
-            EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
+            GameObject bullet = PhotonNetwork.Instantiate(bulletPrefabs.name, transform.position, Quaternion.identity);
+            EnemyBullet enemyBullet = bullet.GetComponent<EnemyBullet>();
             enemyBullet.SetMovementDirection(bulletDirection * speedDanVongTron);
         }
     }
@@ -77,7 +82,8 @@ public class BossEnemy : Enemy
 
     private void SinhMiniEnemy()
     {
-        Instantiate(miniEnemy, transform.position, Quaternion.identity);
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.Instantiate(miniEnemy.name, transform.position, Quaternion.identity);
     }
 
     private void DichChuyen()

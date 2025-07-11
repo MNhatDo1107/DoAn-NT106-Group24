@@ -41,6 +41,8 @@ MonoBehaviour:
   - RespawnSpaceship
   - ReceiveChatMessage
   - StartGameForAll
+  - RPC_TakeDamage
+  - CallBossRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

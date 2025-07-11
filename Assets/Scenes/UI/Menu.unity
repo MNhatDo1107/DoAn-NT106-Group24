@@ -202,13 +202,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 08367b7615ebbb84db340de6c2164020, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 666241086}
+        m_TargetAssemblyTypeName: MainMenuTemp, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1701,6 +1701,7 @@ GameObject:
   - component: {fileID: 666241083}
   - component: {fileID: 666241082}
   - component: {fileID: 666241085}
+  - component: {fileID: 666241086}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1826,6 +1827,18 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &666241086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666241081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb8dc29b4200ad43a59a125614891b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &675660366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,10 +3112,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 385d9946fc295b84d95dc632ae6e9832, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 666241086}
+        m_TargetAssemblyTypeName: MainMenuTemp, Assembly-CSharp
+        m_MethodName: OnClickPlay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
