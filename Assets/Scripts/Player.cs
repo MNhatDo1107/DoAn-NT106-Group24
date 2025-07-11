@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
@@ -25,6 +25,24 @@ public class Player : MonoBehaviourPunCallbacks
     {
         currentHp = maxHp;
         UpdateHpBar();
+
+        // === THÊM ĐOẠN NÀY ===
+        if (photonView.IsMine)
+        {
+            Camera mainCam = Camera.main;
+            if (mainCam != null)
+            {
+                CameraFollow camFollow = mainCam.GetComponent<CameraFollow>();
+                if (camFollow != null)
+                {
+                    camFollow.target = this.transform;
+                }
+                else
+                {
+                    Debug.LogWarning("CameraFollow script not found on Main Camera!");
+                }
+            }
+        }
     }
 
     void Update()

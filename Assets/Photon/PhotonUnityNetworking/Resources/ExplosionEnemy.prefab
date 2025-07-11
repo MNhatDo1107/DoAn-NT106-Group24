@@ -379,6 +379,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -536.65
       objectReference: {fileID: 0}
+    - target: {fileID: 4186324735904793507, guid: bc8d5973fbeb0ae40bca54af141e53b5, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6170279566892933843, guid: bc8d5973fbeb0ae40bca54af141e53b5, type: 3}
       propertyPath: m_Name
       value: HpBar
