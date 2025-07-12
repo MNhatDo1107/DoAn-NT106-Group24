@@ -9,8 +9,8 @@ using Firebase.Auth;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using System;
-using UnityEngine.SceneManagement;
 using Firebase.Extensions;
+using Photon.Pun;
 
 public class FirebaseController : MonoBehaviour
 {
@@ -56,6 +56,14 @@ public class FirebaseController : MonoBehaviour
         loginPanel.SetActive(false);
         signupPanel.SetActive(true);
         profilePanel.SetActive(false);
+        forgetPasswordPanel.SetActive(false);
+    }
+
+    public void OpenProfilePanel()
+    {
+        loginPanel.SetActive(false);
+        signupPanel.SetActive(false);
+        profilePanel.SetActive(true);
         forgetPasswordPanel.SetActive(false);
     }
 
@@ -179,11 +187,13 @@ public class FirebaseController : MonoBehaviour
             }
 
             Firebase.Auth.AuthResult result = task.Result;
+            PhotonNetwork.NickName = result.User.DisplayName;
             Debug.LogFormat("Bạn đã đăng nhập thành công: {0} ({1})",
                 result.User.DisplayName, result.User.UserId);
 
-            // Chuyển sang scene Menu (scene index 2)
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            profileUsername_Text.text = "" + result.User.DisplayName;
+            profileEmail_Text.text = "" + result.User.Email;
+            OpenProfilePanel();
         });
     }
 
@@ -259,6 +269,7 @@ public class FirebaseController : MonoBehaviour
                 isSigned = true;
                 profileUsername_Text.text = "" + user.DisplayName;
                 profileEmail_Text.text = "" + user.Email;
+                OpenProfilePanel();
             }
 
         }
