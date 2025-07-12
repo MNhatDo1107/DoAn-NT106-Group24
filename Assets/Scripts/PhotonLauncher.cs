@@ -33,15 +33,14 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
     {
         Debug.Log("✅ Đã vào phòng!");
         Debug.Log("⭐ MasterClient: " + PhotonNetwork.IsMasterClient);
-    }
-    public void SpawnPlayer()
-    {
-        int playerIndex = PhotonNetwork.LocalPlayer.ActorNumber - 1;
 
+        // Tính vị trí spawn theo số người trong phòng
+        int playerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
         Vector3 spawnPos = (spawnPositions != null && playerIndex < spawnPositions.Length)
             ? spawnPositions[playerIndex].position
             : Vector3.zero;
 
+        // Spawn nhân vật
         if (playerPrefab != null)
         {
             PhotonNetwork.Instantiate(playerPrefab.name, spawnPos, Quaternion.identity);
@@ -51,5 +50,4 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
             Debug.LogError("❌ Chưa kéo prefab nhân vật vào PhotonLauncher!");
         }
     }
-
 }

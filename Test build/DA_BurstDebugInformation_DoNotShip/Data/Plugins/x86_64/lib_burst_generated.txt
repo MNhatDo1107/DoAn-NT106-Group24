@@ -10,7 +10,6 @@ Library: D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_ge
 --linker-options=PdbAltPath="DA_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\DoAn-NT106-Group24\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\DoAn-NT106-Group24\Library\Burst
 --output=D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -37,7 +36,6 @@ Library: D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_ge
 --linker-options=PdbAltPath="DA_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\DoAn-NT106-Group24\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\DoAn-NT106-Group24\Library\Burst
 --output=D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -64,7 +62,6 @@ Library: D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_ge
 --linker-options=PdbAltPath="DA_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\DoAn-NT106-Group24\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\DoAn-NT106-Group24\Library\Burst
 --output=D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -181,7 +178,6 @@ Library: D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_ge
 --linker-options=PdbAltPath="DA_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\DoAn-NT106-Group24\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\DoAn-NT106-Group24\Library\Burst
 --output=D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -300,7 +296,6 @@ Library: D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_ge
 --linker-options=PdbAltPath="DA_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\DoAn-NT106-Group24\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\DoAn-NT106-Group24\Library\Burst
 --output=D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -321,7 +316,6 @@ Library: D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_ge
 --linker-options=PdbAltPath="DA_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\DoAn-NT106-Group24\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\DoAn-NT106-Group24\Library\Burst
 --output=D:\DoAn-NT106-Group24\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
